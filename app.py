@@ -17,9 +17,9 @@ model = keras.models.load_model("model")#,compile=False)
 #model.compile(loss="categorical_crossentropy", optimizer="adam", metrics=["accuracy"])
 @app.route('/classify', methods=['POST'])
 def predict():
-    #parameters = request.get_json(force=True)
-    #im = np.array(parameters['image'])
-    #out = id2class[np.argmax(model.predict(im))]
-    return "out"
+    parameters = request.get_json(force=True)
+    im = np.array(parameters['image'])
+    out = id2class[np.argmax(model.predict(im))]
+    return out
 if __name__ == '__main__':
     app.run()
