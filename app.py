@@ -20,6 +20,6 @@ def predict():
     parameters = request.get_json(force=True)
     im = np.array(parameters['image'])
     out = id2class[np.argmax(model.predict(im))]
-    return out
+    return "out"
 if __name__ == '__main__':
     app.run()
