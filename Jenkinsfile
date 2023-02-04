@@ -9,7 +9,7 @@ pipeline {
         }
         stage('Running') {
             steps {
-                bat 'docker run -d -p 5000:5000 ml_flask_app'
+                bat 'docker run -d -P ml_flask_app'
             }
         }
         stage('Testing') {
