@@ -13,8 +13,8 @@ id2class = {0: "T-shirt/top",
             7: "Sneaker",
             8: "Bag",
             9: "Ankle boot",}
-model = keras.models.load_model("model",compile=False)
-model.compile(loss="categorical_crossentropy", optimizer="adam", metrics=["accuracy"])
+model = keras.models.load_model("model")#,compile=False)
+#model.compile(loss="categorical_crossentropy", optimizer="adam", metrics=["accuracy"])
 @app.route('/classify', methods=['POST'])
 def predict():
     parameters = request.get_json(force=True)
