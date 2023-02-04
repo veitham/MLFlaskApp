@@ -4,7 +4,7 @@ pipeline {
     stages {
         stage('Building') {
             steps {
-                bat 'docker build -t my-flask-app .'
+                bat 'docker build -t ml_flask_app .'
             }
         }
         stage('Running') {
